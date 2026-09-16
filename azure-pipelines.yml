@@ -21,7 +21,7 @@ steps:
   inputs:
     projectJsonPath: '.'
     versionType: 'AutoVersion'
-    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+    outputPath: '$(Build.ArtifactStagingDirectory)/Output'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
