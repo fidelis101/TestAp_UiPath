@@ -21,5 +21,5 @@ steps:
 - task: UiPathDeploy@6
   inputs:
     orchestratorConnection: 'UiPathCloudOrchestrator'
-    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+    packagesPath: '$(Build.ArtifactStagingDirectory)/Output'
     folderName: 'Test'
