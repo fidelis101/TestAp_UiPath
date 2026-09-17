@@ -18,8 +18,15 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'drop'
+    downloadPath: '$(Pipeline.Workspace)'
+
 - task: UiPathDeploy@6
   inputs:
     orchestratorConnection: 'UiPathCloudOrchestrator'
-    packagesPath: '../../_work/a/Output'
+    packagesPath: '$(Pipeline.Workspace)/drop/Output'
     folderName: 'Test'
